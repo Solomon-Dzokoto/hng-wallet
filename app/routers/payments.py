@@ -19,7 +19,7 @@ from sqlalchemy.future import select
 
 from ..database import get_db, settings
 from ..models import Transaction, User
-from ..auth_deps import get_current_user
+from ..auth_deps import get_current_user_from_jwt_from_jwt
 from ..schemas import (
     PaymentInitiateRequest,
     PaymentInitiateResponse,
