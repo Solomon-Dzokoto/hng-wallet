@@ -7,4 +7,3 @@ python-jose[cryptography]
 passlib[bcrypt]
 python-multipart
 httpx
-psycopg2-binary
