@@ -119,12 +119,13 @@ async def initiate_payment(
         )
     
     # Persist transaction
-    transaction = Transaction(
-        reference=reference,
-        user_id=user.id,
-        amount=payment.amount,
-        status="pending"
-    )
+     transaction = Transaction(
+      reference=reference,
+      user_id=user.id,
+      amount=payment.amount,
+      transaction_type="deposit",
+      status="pending"
+  )
     db.add(transaction)
     await db.commit()
     await db.refresh(transaction)
