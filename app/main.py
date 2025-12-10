@@ -3,7 +3,7 @@ from .routers import google_auth, payments, api_keys, wallet
 from .database import engine, Base
 
 app = FastAPI(
-    title="Wallet Service API - HNG Stage 9",
+    title="Wallet Service API",
     description="Backend API for wallet management with Google OAuth, Paystack payments, and API key authentication",
     version="1.0.0"
 )

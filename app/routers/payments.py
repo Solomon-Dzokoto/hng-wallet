@@ -56,7 +56,7 @@ def verify_paystack_signature(payload: bytes, signature: str) -> bool:
 @router.post("/paystack/initiate", response_model=PaymentInitiateResponse, status_code=status.HTTP_201_CREATED)
 async def initiate_payment(
     payment: PaymentInitiateRequest,
-    current_user: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user_from_jwt),
     db: AsyncSession = Depends(get_db)
 ):
     """
