@@ -48,11 +48,11 @@ def generate_reference() -> str:
 
 def verify_paystack_signature(payload: bytes, signature: str) -> bool:
     """Verify the Paystack webhook signature."""
-    if not settings.PAYSTACK_WEBHOOK_SECRET:
+    if not settings.PAYSTACK_SECRET_KEY:
         return False
     
     expected_signature = hmac.new(
-        settings.PAYSTACK_WEBHOOK_SECRET.encode(),
+        settings.PAYSTACK_SECRET_KEY.encode(),
         payload,
         hashlib.sha512
     ).hexdigest()
